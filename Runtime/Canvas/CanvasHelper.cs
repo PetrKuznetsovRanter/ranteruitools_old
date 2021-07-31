@@ -10,19 +10,15 @@ namespace RanterTools.UI
     [RequireComponent(typeof(Canvas))]
     public class CanvasHelper : MonoBehaviour
     {
-        #region Global Event
         public static UnityEvent onOrientationChange = new UnityEvent();
         public static UnityEvent onResolutionChange = new UnityEvent();
-        #endregion Global Event
-        #region Global State
+        
         public static bool isLandscape { get; private set; }
         static List<CanvasHelper> helpers = new List<CanvasHelper>();
         static bool screenChangeVarsInitialized = false;
         static ScreenOrientation lastOrientation = ScreenOrientation.Portrait;
         static Vector2 lastResolution = Vector2.zero;
         static Rect lastSafeArea = Rect.zero;
-        #endregion Global State
-        #region Global Methods
 
         public static void ForceUpdate()
         {
@@ -90,16 +86,10 @@ namespace RanterTools.UI
 
             return GetCanvasSize();
         }
-        #endregion Global  Methods
-        #region State
+        
         Canvas canvas;
         RectTransform rectTransform;
-        #endregion State
-
-
-        #region Unity
-
-
+        
         /// <summary>
         /// Awake is called when the script instance is being loaded.
         /// </summary>
@@ -174,8 +164,6 @@ namespace RanterTools.UI
             if (helpers != null && helpers.Contains(this))
                 helpers.Remove(this);
         }
-
-        #endregion Unity
     }
 
 

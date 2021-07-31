@@ -9,19 +9,8 @@ namespace RanterTools.UI.Debug
 {
     public class ScreenDebug : DebugTab
     {
-        #region Events
         public static Action OnChangeVisible;
-        #endregion Events
-
-        #region Global State
-
-        #endregion Global State
-
-        #region Global Methods
-
-        #endregion Global Methods
-
-        #region Parameters
+        
         [Header("Screen")]
         [SerializeField]
         TMP_Dropdown screenOrientation;
@@ -35,11 +24,7 @@ namespace RanterTools.UI.Debug
         TMP_Dropdown refreshRate;
         [SerializeField]
         Button applyScreenSize;
-
-        #endregion Parameters
-
-
-        #region Methods
+        
         public void Apply()
         {
             Screen.orientation = (ScreenOrientation)(screenOrientation.value + 1);
@@ -65,9 +50,7 @@ namespace RanterTools.UI.Debug
             }
             Screen.SetResolution(int.Parse(screenSizeX.text), int.Parse(screenSizeY.text), fullScreenMode, refreshRate);
         }
-        #endregion Methods
-
-        #region Unity
+       
         /// <summary>
         /// Awake is called when the script instance is being loaded.
         /// </summary>
@@ -132,9 +115,6 @@ namespace RanterTools.UI.Debug
         {
             applyScreenSize.onClick.RemoveListener(Apply);
         }
-
-
-        #endregion Unity
     }
 
 }

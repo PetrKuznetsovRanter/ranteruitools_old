@@ -11,7 +11,6 @@ namespace RanterTools.UI.Editor
     /// </summary>
     public class ComboBoxMenu
     {
-        #region Global Methods
         [MenuItem("GameObject/UI/ComboBox (TMP)", false, 10)]
         public static void CreateComboBox()
         {
@@ -24,7 +23,6 @@ namespace RanterTools.UI.Editor
             (combobox.transform as RectTransform).anchoredPosition = Vector2.zero;
             Selection.activeObject = combobox;
         }
-        #endregion Global Methods
     }
 
 }

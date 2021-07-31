@@ -12,14 +12,10 @@ namespace RanterTools.UI
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class PixelPerUnitTMPro : MonoBehaviour
     {
-
-        #region Global State
 #if UNITY_EDITOR
         static List<PixelPerUnitTMPro> All = new List<PixelPerUnitTMPro>();
 #endif
-        #endregion Global State
-
-        #region Global Methods
+        
 #if UNITY_EDITOR
         [MenuItem("RanterTools/UI/DPI/ForceUpdate")]
         static void UpdateAll()
@@ -30,15 +26,10 @@ namespace RanterTools.UI
             }
         }
 #endif
-        #endregion Global Methods
-
-
-        #region Parameters
+        
         [SerializeField]
         float fontSize = -1;
-        #endregion Parameters
 
-        #region State
         bool cacheTried = false;
 
         TextMeshProUGUI TextMeshProUGUI { get; set; }
@@ -48,9 +39,7 @@ namespace RanterTools.UI
         float oldFont;
 #endif
         float font;
-        #endregion State
-
-        #region Methods
+        
         void UpdateParameters()
         {
             font = fontSize * Mathf.Min(Screen.width, Screen.height) / 1080.0f;
@@ -86,9 +75,7 @@ namespace RanterTools.UI
             }
             TextMeshProUGUI.enableAutoSizing = false;
         }
-        #endregion Methods
-
-        #region Unity
+        
         /// <summary>
         /// Awake is called when the script instance is being loaded.
         /// </summary>
@@ -152,6 +139,5 @@ namespace RanterTools.UI
             }
         }
 #endif
-        #endregion Unity
     }
 }

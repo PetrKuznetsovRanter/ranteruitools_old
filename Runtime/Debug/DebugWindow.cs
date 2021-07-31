@@ -7,12 +7,9 @@ namespace RanterTools.UI.Debug
 {
     public class DebugWindow : MonoBehaviour
     {
-        #region Global Events
         public static Action<string, IDebugTab, bool> OnRegisterTab;
         public static Action<string> OnShow;
-        #endregion Global Events
-
-        #region Parameters
+       
         [SerializeField]
         Button close;
         [SerializeField]
@@ -21,11 +18,9 @@ namespace RanterTools.UI.Debug
         Transform tabsContainer;
         [SerializeField]
         Transform framesContainer;
-        #endregion Parameters
-        #region State
+       
         List<IDebugTab> Tabs { get; set; } = new List<IDebugTab>();
-        #endregion State
-        #region Methods
+        
         void RegisterTab(IDebugTab tab, bool active)
         {
             Tabs.Add(tab);
@@ -56,9 +51,7 @@ namespace RanterTools.UI.Debug
         {
             gameObject.SetActive(false);
         }
-        #endregion Methods
-
-        #region Unity
+       
         /// <summary>
         /// Awake is called when the script instance is being loaded.
         /// </summary>
@@ -73,8 +66,5 @@ namespace RanterTools.UI.Debug
             close.onClick.AddListener(Hide);
             gameObject.SetActive(false);
         }
-
-
-        #endregion Unity
     }
 }

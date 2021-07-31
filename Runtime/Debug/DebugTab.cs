@@ -8,14 +8,11 @@ namespace RanterTools.UI.Debug
 {
     public class DebugTab : MonoBehaviour, IDebugTab
     {
-        #region Events
         /// <summary>
         /// Event for click on tab button or another event for this.
         /// </summary>
         public event Action<IDebugTab> OnTabClick;
-        #endregion Events
-
-        #region Parameters
+        
         [Header("Tab")]
         [SerializeField]
         bool activeDefault = false;
@@ -27,16 +24,10 @@ namespace RanterTools.UI.Debug
         Color InactiveColor = new Color(0, 0, 0, 0.2f);
         [SerializeField]
         GameObject frame;
-        #endregion Parameters
-
-
-        #region State
+       
         Image TabBackground;
         Button TabButton;
-
-        #endregion State
-        #region Methods
-        #region IDebugTab
+        
         /// <summary>
         /// Initialize tab.virtual Create all objects.
         /// </summary>
@@ -72,15 +63,11 @@ namespace RanterTools.UI.Debug
             DestroyImmediate(frame);
             DestroyImmediate(gameObject);
         }
-        #endregion IDebugTab
+        
         void TabButtonClick()
         {
             if (OnTabClick != null) OnTabClick(this);
         }
-
-
-        #endregion Methods
-        #region Unity
 
         /// <summary>
         /// Awake is called when the script instance is being loaded.
@@ -109,6 +96,5 @@ namespace RanterTools.UI.Debug
         {
             TabButton.onClick.RemoveListener(TabButtonClick);
         }
-        #endregion Unity
     }
 }

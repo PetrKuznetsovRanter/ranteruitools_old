@@ -16,11 +16,8 @@ namespace RanterTools.UI
     [DisallowMultipleComponent]
     public class ComboBox : MonoBehaviour
     {
-        #region Global State
         public static event Action<ComboBox> OnOpenPanel;
-        #endregion Global State
-
-        #region Parameters
+        
         /// <summary>
         /// AvailableOptions for combobox
         /// </summary>
@@ -63,17 +60,13 @@ namespace RanterTools.UI
         /// On select option
         /// </summary>
         public SelectionChangedEvent OnSelectionChanged;
-        #endregion Parameters
-        #region Events
+        
         [System.Serializable]
         public class SelectionChangedEvent : UnityEngine.Events.UnityEvent<string>
         {
 
         }
-
-        #endregion Events
-
-        #region State
+        
         /// <summary>
         /// Selected option, if it is.
         /// </summary>
@@ -114,11 +107,7 @@ namespace RanterTools.UI
         /// Scroll panel bottom offset
         /// </summary>
         float scrollPanelBottomOffset;
-
-        #endregion State
-
-        #region Methods
-
+        
         /// <summary>
         /// Initialize for new available item
         /// </summary>
@@ -305,9 +294,7 @@ namespace RanterTools.UI
                 RedrawPanel();
             }
         }
-        #endregion Methods
-
-        #region Unity
+        
         /// <summary>
         /// Awake is called when the script instance is being loaded.
         /// </summary>
@@ -336,7 +323,6 @@ namespace RanterTools.UI
             mainInput.onSelect.RemoveListener(OnFieldSelect);
             if (arrow != null) arrow.onClick.RemoveListener(OnArrowTap);
         }
-        #endregion Unity
     }
 
 }

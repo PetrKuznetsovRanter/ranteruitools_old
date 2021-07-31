@@ -10,15 +10,8 @@ namespace RanterTools.UI.Editor
     [DefaultExecutionOrder(10000)]
     public static class AnchorCalculator
     {
-        #region Events
-
-        #endregion Events
-
-        #region Global State
         static Dictionary<string, RectTransformState> states = new Dictionary<string, RectTransformState>();
-        #endregion Global State
-
-        #region Global Methods
+        
         /// <summary>
         /// Convert current size for currect screen to anchors.
         /// </summary>
@@ -180,7 +173,6 @@ namespace RanterTools.UI.Editor
             if (uiPath == null) throw new System.Exception("Can't find uitool folder.");
             return uiPath.FullName.Replace(assets.FullName, "Assets");
         }
-        #endregion Global Methods
     }
 
 

@@ -13,15 +13,6 @@ namespace RanterTools.UI
     /// </summary>
     public static class CheckFields
     {
-        #region Events
-
-        #endregion Events
-
-        #region Global State
-
-        #endregion Global State
-
-        #region Global Methods
         /// <summary>
         /// Check email field.
         /// </summary>
@@ -56,6 +47,5 @@ namespace RanterTools.UI
                 if (correct != null) correct();
             }
         }
-        #endregion Global Methods
     }
 }

@@ -9,19 +9,8 @@ namespace RanterTools.UI.Debug
 {
     public class DebugPlayerPrefs : DebugTab
     {
-        #region Events
         public static Action OnChangeVisible;
-        #endregion Events
-
-        #region Global State
-
-        #endregion Global State
-
-        #region Global Methods
-
-        #endregion Global Methods
-
-        #region Parameters
+        
         [Header("PlayersPrefs")]
         [SerializeField]
         TMP_Dropdown prefsType;
@@ -37,14 +26,7 @@ namespace RanterTools.UI.Debug
         Button deletePrefs;
         [SerializeField]
         Button deleteAllPrefs;
-
-        #endregion Parameters
-
-
-        #region Methods
-
-
-
+        
         public void SetPlayersPrefs()
         {
             switch (prefsType.value)
@@ -98,9 +80,7 @@ namespace RanterTools.UI.Debug
 
             }
         }
-        #endregion Methods
-
-        #region Unity
+        
         /// <summary>
         /// Awake is called when the script instance is being loaded.
         /// </summary>
@@ -143,8 +123,6 @@ namespace RanterTools.UI.Debug
             deletePrefs.onClick.RemoveListener(DeletePlayersPrefs);
             deleteAllPrefs.onClick.RemoveListener(DeleteAllPlayersPrefs);
         }
-
-        #endregion Unity
     }
 
 }

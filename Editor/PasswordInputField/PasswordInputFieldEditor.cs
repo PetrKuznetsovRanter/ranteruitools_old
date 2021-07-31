@@ -13,7 +13,6 @@ namespace RanterTools.UI.Editor
     /// </summary>
     public class PasswordInputFieldMenu
     {
-        #region Global Methods
         /// <summary>
         /// Create new password input field
         /// </summary>
@@ -29,8 +28,6 @@ namespace RanterTools.UI.Editor
             (passwordinputfield.transform as RectTransform).anchoredPosition = Vector2.zero;
             Selection.activeObject = passwordinputfield;
         }
-        #endregion Global Methods
-
     }
 
     [CanEditMultipleObjects]

@@ -11,17 +11,10 @@ namespace RanterTools.UI
     [RequireComponent(typeof(Image))]
     public class PixelPerUnitFromDPI : MonoBehaviour
     {
-        #region Events
-
-        #endregion Events
-
-        #region Global State
 #if UNITY_EDITOR
         static List<PixelPerUnitFromDPI> All = new List<PixelPerUnitFromDPI>();
 #endif
-        #endregion Global State
-
-        #region Global Methods
+        
 #if UNITY_EDITOR
         [MenuItem("RanterTools/UI/DPI/ForceUpdate")]
         static void UpdateAll()
@@ -32,14 +25,10 @@ namespace RanterTools.UI
             }
         }
 #endif
-        #endregion Global Methods
-
-        #region Parameters
+      
         [SerializeField]
         float PixelPerUnityMultiplier;
-        #endregion Parameters
-
-        #region State   
+        
         Image image;
         Image Image
         {
@@ -50,10 +39,7 @@ namespace RanterTools.UI
         float oldPixelPerUnityMultiplier;
 #endif
         float multiplier;
-
-        #endregion State
-
-        #region Methods
+        
         void UpdateParameters()
         {
             multiplier = PixelPerUnityMultiplier * 1080.0f / Mathf.Min(Screen.width, Screen.height);
@@ -64,9 +50,7 @@ namespace RanterTools.UI
 
 
         }
-        #endregion Methods
-
-        #region Unity
+      
         /// <summary>
         /// Awake is called when the script instance is being loaded.
         /// </summary>
@@ -128,8 +112,6 @@ namespace RanterTools.UI
             }
         }
 #endif
-
-        #endregion Unity
     }
 
 }

@@ -14,9 +14,6 @@ namespace RanterTools.UI
     [ExecuteAlways]
     public class PasswordInputField : TMP_InputField
     {
-
-
-        #region Parameters
         [SerializeField]
         Button switchButton;
         [SerializeField]
@@ -25,17 +22,11 @@ namespace RanterTools.UI
         float aspectRatioStar = 1;
         [SerializeField]
         RectTransform stars;
-        #endregion Parameters
-        #region State
+       
         List<RectTransform> starsContainer = new List<RectTransform>();
         bool visible = false;
         bool needUpdate = false;
-        #endregion State
-
-
-        #region Methods
-
-
+       
         void Switch()
         {
             visible = !visible;
@@ -99,10 +90,7 @@ namespace RanterTools.UI
                 if (!starsContainer[i].gameObject.activeSelf) starsContainer[i].gameObject.SetActive(true);
             }
         }
-        #endregion Methods
-
-        #region Unity
-
+      
         /// <summary>
         /// Start is called on the frame when a script is enabled just before
         /// any of the Update methods is called the first time.
@@ -164,8 +152,5 @@ namespace RanterTools.UI
             base.LateUpdate();
 
         }
-
-
-        #endregion Unity
     }
 }

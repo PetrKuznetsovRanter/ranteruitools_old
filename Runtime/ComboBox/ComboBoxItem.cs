@@ -12,23 +12,6 @@ namespace RanterTools.UI
     [RequireComponent(typeof(Button))]
     public class ComboBoxItem : MonoBehaviour
     {
-        #region Events
-
-        #endregion Events
-
-        #region Global State
-
-        #endregion Global State
-
-        #region Global Methods
-
-        #endregion Global Methods
-
-        #region Parameters
-
-        #endregion Parameters
-
-        #region State
         ComboBoxOptionString option;
 
         public ComboBoxOptionString Option
@@ -50,16 +33,12 @@ namespace RanterTools.UI
         {
             get { return label = label ?? GetComponentInChildren<TextMeshProUGUI>(true); }
         }
-        #endregion State
-
-        #region Methods
+        
         void SetData(ComboboxOption<string> option)
         {
             if (Label != null) Label.text = option.ToString().ToUpper();
         }
-        #endregion Methods
-
-        #region Unity
+       
         /// <summary>
         /// Awake is called when the script instance is being loaded.
         /// </summary>
@@ -89,7 +68,5 @@ namespace RanterTools.UI
         {
 
         }
-
-        #endregion Unity
     }
 }

@@ -13,17 +13,12 @@ namespace RanterTools.UI
     [Serializable]
     public class ComboboxOption<T>
     {
-        #region Global State
         static List<ComboboxOption<T>> all = new List<ComboboxOption<T>>();
-        #endregion Global State
-
-        #region State
+        
         int id;
         public int ID { get { return id; } }
         public string Name;
         public T Meta;
-        #endregion State
-
 
         public ComboboxOption()
         {
@@ -47,8 +42,7 @@ namespace RanterTools.UI
             all.Add(this);
             id = all.Max((o) => o.ID) + 1;
         }
-
-        #region Overrides
+        
         public static implicit operator string(ComboboxOption<T> option)
         {
             return option.ToString();
@@ -78,8 +72,6 @@ namespace RanterTools.UI
         {
             all.Remove(this);
         }
-
-        #endregion Overrides
     }
 
     [Serializable]

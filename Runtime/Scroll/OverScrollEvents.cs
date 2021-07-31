@@ -10,7 +10,6 @@ namespace RanterTools.UI
     [RequireComponent(typeof(RectTransform))]
     public class OverScrollEvents : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
-        #region Parameters
         [SerializeField]
         RectTransform parent;
         [SerializeField]
@@ -30,20 +29,17 @@ namespace RanterTools.UI
         [SerializeField]
         [Tooltip("Axises that ")]
         bool axisX, axisY;
-        #endregion Parameters
-        #region Events
+       
         public OverDragEvent OnBeginOverDrag = new OverDragEvent();
         public OverDragEvent OnOverDrag = new OverDragEvent();
         public OverDragEvent OnEndOverDrag = new OverDragEvent();
         public OverDragEvent OnReturnOverDrag = new OverDragEvent();
-        #endregion Events
-        #region State
+        
         RectTransform RectTransform;
         bool dragged = false;
         public OverScrollState axisXState = 0;
         public OverScrollState axisYState = 0;
-        #endregion State
-        #region Methods
+        
         public void OnBeginDrag(PointerEventData pointer)
         {
             dragged = true;
@@ -153,8 +149,7 @@ namespace RanterTools.UI
                 }
             }
         }
-        #endregion Methods
-        #region Unity
+        
         /// <summary>
         /// Awake is called when the script instance is being loaded.
         /// </summary>
@@ -178,7 +173,6 @@ namespace RanterTools.UI
             RectTransform = transform as RectTransform;
 
         }
-        #endregion Unity
     }
 
     [Serializable]
